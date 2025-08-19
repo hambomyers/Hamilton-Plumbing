@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamilton Plumbing - Service Pricing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 80px 40px 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+            border-radius: 8px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            animation: shimmer 8s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        .header h1 {
+            font-size: 2.8em;
+            font-weight: 200;
+            letter-spacing: 4px;
+            color: #ffffff;
+            margin-bottom: 35px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-info {
+            color: #b0b0b0;
+            font-size: 0.95em;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-info strong {
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 1.1em;
+        }
+        
+        .rate-structure {
+            background: linear-gradient(135deg, #2d2d2d, #363636);
+            padding: 45px;
+            margin: 50px 0;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .rate-structure h3 {
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-bottom: 25px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .rate-structure p {
+            color: #b0b0b0;
+            line-height: 2.2;
+            font-size: 1em;
+        }
+        
+        .rate-structure strong {
+            color: #ffffff;
+            font-weight: 400;
+        }
+        
+        .rate-structure em {
+            color: #909090;
+            font-size: 0.9em;
+        }
+        
+        .pricing-section {
+            background: linear-gradient(135deg, #2a2a2a, #303030);
+            padding: 45px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        
+        .pricing-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, #2d2d2d, #333333);
+        }
+        
+        .section-title {
+            font-size: 1.15em;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, #4a7c59, transparent);
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.02));
+            transition: width 0.3s ease;
+        }
+        
+        .price-item:hover::before {
+            width: 100%;
+        }
+        
+        .price-item:hover {
+            padding-left: 25px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .price-item:hover .price {
+            color: #6fa77f;
+            text-shadow: 0 0 20px rgba(111, 167, 127, 0.3);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .service-name {
+            font-weight: 300;
+            color: #d0d0d0;
+            flex: 1;
+            font-size: 0.95em;
+            letter-spacing: 0.3px;
+        }
+        
+        .price {
+            font-weight: 400;
+            color: #ffffff;
+            font-size: 1.05em;
+            margin-left: 20px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 70px 40px;
+            margin-top: 70px;
+            background: linear-gradient(135deg, #2a2a2a, #333333);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            animation: shimmer 10s infinite;
+        }
+        
+        .footer h3 {
+            font-size: 1.4em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .phone-number {
+            font-size: 1.8em;
+            font-weight: 200;
+            margin: 25px 0;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .email {
+            color: #b0b0b0;
+            font-size: 1em;
+            margin: 15px 0;
+            letter-spacing: 0.5px;
+        }
+        
+        .note {
+            margin-top: 45px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #909090;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .badge {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #4a7c59, #5a8c69);
+            color: white;
+            border-radius: 25px;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+                letter-spacing: 2px;
+            }
+            
+            .pricing-section {
+                padding: 30px 20px;
+            }
+            
+            .service-name {
+                font-size: 0.9em;
+            }
+            
+            .price {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HAMILTON PLUMBING</h1>
+            <div class="contact-info">
+                <strong>(434) 242-8989</strong><br>
+                hamilton@hamiltonplumbingva.com<br>
+                PO Box 283<br>
+                Ruckersville, VA
+            </div>
+            <div class="badge">Licensed & Insured</div>
+        </div>
+
+        <div class="rate-structure">
+            <h3>Service Rates</h3>
+            <p>
+                <strong>Standard Rate:</strong> $195/hour<br>
+                <em>Diagnosis and Exploratory</em><br><br>
+                <strong>Service Call with 15min Diagnosis:</strong> $145<br>
+                <strong>Jobs Quoted or Base Charge Minimum</strong><br><br>
+                <strong>Emergency Service:</strong> 2x Standard Rate<br>
+                <em>(Weekends & Outside 8-5)</em>
+            </p>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Pre-Sale & Inspection Repairs</div>
+            <div class="price-item">
+                <span class="service-name">Replace/repair leaking shut-off valves</span>
+                <span class="price">$255</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">P-trap replacement under sinks</span>
+                <span class="price">$275</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Wax ring replacement (toilet reseating)</span>
+                <span class="price">$385</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Angle stop replacement</span>
+                <span class="price">$255</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Supply line replacement (each)</span>
+                <span class="price">$145</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Dishwasher connection/reconnection</span>
+                <span class="price">$325</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Fix wobbly toilet (shim & caulk)</span>
+                <span class="price">$245</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace toilet seat & bolts</span>
+                <span class="price">$145</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Quick Tenant Turnover Services</div>
+            <div class="price-item">
+                <span class="service-name">Full unit plumbing inspection & report</span>
+                <span class="price">$195</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace all faucet aerators (per unit)</span>
+                <span class="price">$145</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Shower head replacement</span>
+                <span class="price">$185</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Toilet handle/chain adjustment</span>
+                <span class="price">$185</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Garbage disposal reset & cleaning</span>
+                <span class="price">$245</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Water heater T&P valve replacement</span>
+                <span class="price">$385</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Check & adjust water pressure</span>
+                <span class="price">$255</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Toilet Services</div>
+            <div class="price-item">
+                <span class="service-name">Toilet running/won't stop</span>
+                <span class="price">$255</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Toilet fill valve (brass shank/clean tank)</span>
+                <span class="price">$350</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace toilet (labor & bolts/compound)</span>
+                <span class="price">$550</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replacement toilet flange/raising</span>
+                <span class="price">$385</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Toilet overflow/won't flush</span>
+                <span class="price">$275</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Faucets & Fixtures</div>
+            <div class="price-item">
+                <span class="service-name">Rebuild Delta kit faucet</span>
+                <span class="price">$350</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace kitchen faucet</span>
+                <span class="price">$445</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace bathroom faucet</span>
+                <span class="price">$450</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Tub/shower faucet labor</span>
+                <span class="price">$650</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Hose bibb (includes demo & valve)</span>
+                <span class="price">$575</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace shutoff stop</span>
+                <span class="price">$255</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Faucet dripping/leaking</span>
+                <span class="price">$255</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Drain & trap replacement for optimal storage</span>
+                <span class="price">$375</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace tub spout</span>
+                <span class="price">$245</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace shower arm & flange</span>
+                <span class="price">$225</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Drain & Clog Services</div>
+            <div class="price-item">
+                <span class="service-name">Main sewer snake</span>
+                <span class="price">$600</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Sink clog</span>
+                <span class="price">$275</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Tub/shower clog</span>
+                <span class="price">$275</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Toilet auger</span>
+                <span class="price">$275</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Under-sink leak repair</span>
+                <span class="price">$325</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Tub overflow repair</span>
+                <span class="price">$385</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Water Heater Services</div>
+            <div class="price-item">
+                <span class="service-name">50-gallon State electric (8yr warranty, ball valve & fittings)</span>
+                <span class="price">$1,870</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">LP/Gas State commercial powervent with fittings</span>
+                <span class="price">$2,875</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Basic service & flush (Navien)</span>
+                <span class="price">$350</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Service/clean gas WH + minimum</span>
+                <span class="price">$350</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Water heater flush & check</span>
+                <span class="price">$285</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Drain water heater for moving</span>
+                <span class="price">$245</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Pumps & Well Systems</div>
+            <div class="price-item">
+                <span class="service-name">1/2 HP well pump replacement</span>
+                <span class="price">$2,275</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">3/4 HP well pump replacement</span>
+                <span class="price">$2,775</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">1/2 HP sewage pump replacement</span>
+                <span class="price">$1,900</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">PRV (Pressure Reducing Valve)</span>
+                <span class="price">$575</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Water Filtration Systems</div>
+            <div class="price-item">
+                <span class="service-name">Under-sink water filter installation</span>
+                <span class="price">$425</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Inline water filter for fridge</span>
+                <span class="price">$325</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Whole house sediment filter</span>
+                <span class="price">$875</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Filter cartridge replacement service</span>
+                <span class="price">$185</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Water quality test & report</span>
+                <span class="price">$195</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Emergency Services</div>
+            <div class="price-item">
+                <span class="service-name">Frozen pipe thawing</span>
+                <span class="price">$425</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace burst washing machine hose</span>
+                <span class="price">$285</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Emergency shut-off valve location & tag</span>
+                <span class="price">$145</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Preventive Property Maintenance</div>
+            <div class="price-item">
+                <span class="service-name">Seasonal faucet winterization (per bibb)</span>
+                <span class="price">$95</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Clean faucet aerators & shower heads</span>
+                <span class="price">$185</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Inspect & adjust all toilets (per unit)</span>
+                <span class="price">$245</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Document plumbing condition for property</span>
+                <span class="price">$295</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Small Fixture Updates</div>
+            <div class="price-item">
+                <span class="service-name">Install/replace refrigerator water line</span>
+                <span class="price">$325</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Install shut-off valve where missing</span>
+                <span class="price">$385</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Install clean-out access</span>
+                <span class="price">$485</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Move-In/Move-Out Services</div>
+            <div class="price-item">
+                <span class="service-name">Turn on/off water service & check</span>
+                <span class="price">$145</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Disconnect/reconnect washer</span>
+                <span class="price">$185</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Cap off unused plumbing lines</span>
+                <span class="price">$285</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Additional Services</div>
+            <div class="price-item">
+                <span class="service-name">Garbage disposal - builder grade with fittings</span>
+                <span class="price">$625</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Garbage disposal - 9yr warranty ISE upgrade</span>
+                <span class="price">$725</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>Direct Service Line</h3>
+            <div class="phone-number">(434) 242-8989</div>
+            <div class="email">hamilton@hamiltonplumbingva.com</div>
+            
+            <div class="note">
+                Transparent pricing for property management professionals. All prices include labor and standard materials. 
+                Licensed, insured, and specializing in rapid response for rental properties and real estate transactions.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
