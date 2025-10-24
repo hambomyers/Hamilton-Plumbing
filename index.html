@@ -63,15 +63,16 @@
         }
         
         .contact-info {
-            color: #b0b0b0;
+            color: #ffffff;
             font-size: 0.95em;
             line-height: 1.8;
             letter-spacing: 0.5px;
+            font-weight: 600;
         }
         
         .contact-info strong {
             color: #ffffff;
-            font-weight: 400;
+            font-weight: 600;
             font-size: 1.1em;
         }
         
@@ -108,6 +109,21 @@
         .rate-structure em {
             color: #909090;
             font-size: 0.9em;
+        }
+
+        .financing-note {
+            background: linear-gradient(135deg, #3a4a3a, #2d3d2d);
+            padding: 25px 35px;
+            margin: 35px 0;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid rgba(111, 167, 127, 0.3);
+        }
+
+        .financing-note p {
+            color: #b8d4b8;
+            font-size: 1.05em;
+            font-weight: 400;
         }
         
         .pricing-section {
@@ -158,6 +174,15 @@
             width: 60px;
             height: 1px;
             background: linear-gradient(90deg, #4a7c59, transparent);
+        }
+
+        .section-subtitle {
+            font-size: 0.95em;
+            font-weight: 400;
+            color: #a0a0a0;
+            font-style: italic;
+            margin-top: -25px;
+            margin-bottom: 25px;
         }
         
         .price-item {
@@ -216,6 +241,23 @@
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
         }
+
+        .subsection-header {
+            font-size: 0.9em;
+            font-weight: 400;
+            color: #8fa78f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 25px 0 15px 0;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .subsection-header:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
         
         .footer {
             text-align: center;
@@ -224,92 +266,37 @@
             background: linear-gradient(135deg, #2a2a2a, #333333);
             border-radius: 8px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
-            animation: shimmer 10s infinite;
         }
         
         .footer h3 {
-            font-size: 1.4em;
-            font-weight: 300;
-            margin-bottom: 30px;
+            font-size: 1.5em;
+            font-weight: 200;
             color: #ffffff;
+            margin-bottom: 25px;
             letter-spacing: 2px;
-            text-transform: uppercase;
         }
         
         .phone-number {
-            font-size: 1.8em;
-            font-weight: 200;
-            margin: 25px 0;
-            letter-spacing: 3px;
+            font-size: 2em;
+            font-weight: 300;
             color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
         
         .email {
+            font-size: 1.1em;
             color: #b0b0b0;
-            font-size: 1em;
-            margin: 15px 0;
-            letter-spacing: 0.5px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
         }
         
         .note {
-            margin-top: 45px;
-            padding: 25px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 6px;
             font-size: 0.9em;
             color: #909090;
             line-height: 1.8;
-            letter-spacing: 0.3px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .badge {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 10px 25px;
-            background: linear-gradient(135deg, #4a7c59, #5a8c69);
-            color: white;
-            border-radius: 25px;
-            font-size: 0.85em;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-                letter-spacing: 2px;
-            }
-            
-            .pricing-section {
-                padding: 30px 20px;
-            }
-            
-            .service-name {
-                font-size: 0.9em;
-            }
-            
-            .price {
-                font-size: 1em;
-            }
+            max-width: 700px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -318,187 +305,173 @@
         <div class="header">
             <h1>HAMILTON PLUMBING</h1>
             <div class="contact-info">
-                <strong>(434) 242-8989</strong><br>
-                hamilton@hamiltonplumbingva.com<br>
-                PO Box 283<br>
-                Ruckersville, VA
+                <strong>Professional Plumbing Services</strong><br>
+                Charlottesville & Surrounding Areas<br>
+                Licensed | Insured | Background Checked
             </div>
-            <div class="badge">Licensed & Insured</div>
         </div>
 
         <div class="rate-structure">
-            <h3>Service Rates</h3>
+            <h3>Service Call & Hourly Rates</h3>
             <p>
-                <strong>Standard Rate:</strong> $195/hour<br>
-                <em>Diagnosis and Exploratory</em><br><br>
-                <strong>Service Call with 15min Diagnosis:</strong> $145<br>
-                <strong>Jobs Quoted or Base Charge Minimum</strong><br><br>
-                <strong>Emergency Service:</strong> 2x Standard Rate<br>
-                <em>(Weekends & Outside 8-5)</em>
+                <strong>Standard Service Call:</strong> $175<br>
+                <strong>Hourly Rate:</strong> $215/hour<br>
+                <strong>After-Hours/Weekend:</strong> $295<br>
+                <strong>Emergency Service (Holidays):</strong> $350<br>
+                <em>Minimum 1 hour charge applies to all service calls</em>
             </p>
         </div>
 
+        <div class="financing-note">
+            <p><strong>Flexible Financing Available</strong> on jobs over $1,000<br>
+            Ask your technician for details or apply instantly</p>
+        </div>
+
         <div class="pricing-section">
-            <div class="section-title">Pre-Sale & Inspection Repairs</div>
+            <div class="section-title">Value Package Deals</div>
+            <div class="section-subtitle">Save with our bundled service packages</div>
             <div class="price-item">
-                <span class="service-name">Replace/repair leaking shut-off valves</span>
-                <span class="price">$255</span>
+                <span class="service-name">Move-In Ready Package - Toilet replacement + kitchen faucet upgrade + full inspection</span>
+                <span class="price">$1,795</span>
             </div>
             <div class="price-item">
-                <span class="service-name">P-trap replacement under sinks</span>
-                <span class="price">$275</span>
+                <span class="service-name">Rental Property Refresh - All shutoff valves + toilet tune-up + drain cleaning</span>
+                <span class="price">$995</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Wax ring replacement (toilet reseating)</span>
-                <span class="price">$385</span>
+                <span class="service-name">New Homeowner Peace of Mind - Full plumbing inspection + water heater flush + detailed report</span>
+                <span class="price">$595</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Angle stop replacement</span>
-                <span class="price">$255</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Supply line replacement (each)</span>
-                <span class="price">$145</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Dishwasher connection/reconnection</span>
-                <span class="price">$325</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Fix wobbly toilet (shim & caulk)</span>
-                <span class="price">$245</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Replace toilet seat & bolts</span>
-                <span class="price">$145</span>
+                <span class="service-name">Winterization Package - Multiple outdoor faucet protection (up to 4 bibbs)</span>
+                <span class="price">$295</span>
             </div>
         </div>
 
         <div class="pricing-section">
-            <div class="section-title">Quick Tenant Turnover Services</div>
+            <div class="section-title">Kitchen Faucets</div>
+            <div class="section-subtitle">Custom fixture configurations available - contact for quote</div>
+            
+            <div class="subsection-header">Installation Only (Customer/Builder Supplies Fixture)</div>
             <div class="price-item">
-                <span class="service-name">Full unit plumbing inspection & report</span>
-                <span class="price">$195</span>
+                <span class="service-name">Kitchen faucet installation (customer supplies)</span>
+                <span class="price">$485</span>
+            </div>
+
+            <div class="subsection-header">Complete Replacement (Fixture Included)</div>
+            <div class="price-item">
+                <span class="service-name">Basic - Builder-grade chrome single-handle</span>
+                <span class="price">$725</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Replace all faucet aerators (per unit)</span>
-                <span class="price">$145</span>
+                <span class="service-name">Upgraded - Brushed nickel pull-down sprayer</span>
+                <span class="price">$975</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Shower head replacement</span>
-                <span class="price">$185</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Toilet handle/chain adjustment</span>
-                <span class="price">$185</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Garbage disposal reset & cleaning</span>
-                <span class="price">$245</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Water heater T&P valve replacement</span>
-                <span class="price">$385</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Check & adjust water pressure</span>
-                <span class="price">$255</span>
+                <span class="service-name">Premium - Commercial-style touchless or pot-filler</span>
+                <span class="price">$1,450</span>
             </div>
         </div>
 
         <div class="pricing-section">
-            <div class="section-title">Toilet Services</div>
+            <div class="section-title">Bathroom Vanity Faucets</div>
+            <div class="section-subtitle">Custom fixture configurations available - contact for quote</div>
+            
+            <div class="subsection-header">Installation Only (Customer/Builder Supplies Fixture)</div>
             <div class="price-item">
-                <span class="service-name">Toilet running/won't stop</span>
-                <span class="price">$255</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Toilet fill valve (brass shank/clean tank)</span>
+                <span class="service-name">Bathroom vanity faucet installation (customer supplies)</span>
                 <span class="price">$350</span>
             </div>
+
+            <div class="subsection-header">Complete Replacement (Fixture Included)</div>
             <div class="price-item">
-                <span class="service-name">Replace toilet (labor & bolts/compound)</span>
-                <span class="price">$550</span>
+                <span class="service-name">Basic - Builder-grade chrome centerset</span>
+                <span class="price">$525</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Replacement toilet flange/raising</span>
-                <span class="price">$385</span>
+                <span class="service-name">Upgraded - Brushed nickel widespread 3-hole</span>
+                <span class="price">$725</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Toilet overflow/won't flush</span>
-                <span class="price">$275</span>
+                <span class="service-name">Premium - Designer finish waterfall or vessel style</span>
+                <span class="price">$1,050</span>
             </div>
         </div>
 
         <div class="pricing-section">
-            <div class="section-title">Faucets & Fixtures</div>
+            <div class="section-title">Tub/Shower Faucets</div>
+            <div class="section-subtitle">Custom fixture configurations available - contact for quote</div>
+            
+            <div class="subsection-header">Installation Only (Customer/Builder Supplies Fixture)</div>
             <div class="price-item">
-                <span class="service-name">Rebuild Delta kit faucet</span>
-                <span class="price">$350</span>
+                <span class="service-name">Standard single-handle installation</span>
+                <span class="price">$695</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Replace kitchen faucet</span>
-                <span class="price">$445</span>
+                <span class="service-name">Dual-handle or thermostatic installation</span>
+                <span class="price">$995</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Replace bathroom faucet</span>
-                <span class="price">$450</span>
+                <span class="service-name">Complex multi-outlet installation (3+ ports)</span>
+                <span class="price">$1,495</span>
+            </div>
+
+            <div class="subsection-header">Complete Replacement (Fixture Included)</div>
+            <div class="price-item">
+                <span class="service-name">Basic - Standard chrome single-handle valve & trim with fixed showerhead</span>
+                <span class="price">$1,095</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Tub/shower faucet labor</span>
-                <span class="price">$650</span>
+                <span class="service-name">Upgraded - Dual-handle valve with handheld shower sprayer & fixed showerhead (2 ports)</span>
+                <span class="price">$1,595</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Hose bibb (includes demo & valve)</span>
-                <span class="price">$575</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Replace shutoff stop</span>
-                <span class="price">$255</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Faucet dripping/leaking</span>
-                <span class="price">$255</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Drain & trap replacement for optimal storage</span>
-                <span class="price">$375</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Replace tub spout</span>
-                <span class="price">$245</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Replace shower arm & flange</span>
-                <span class="price">$225</span>
+                <span class="service-name">Premium - Thermostatic valve with rain head, handheld sprayer & body sprays (3+ ports)</span>
+                <span class="price">$2,450</span>
             </div>
         </div>
 
         <div class="pricing-section">
-            <div class="section-title">Drain & Clog Services</div>
+            <div class="section-title">Toilets - Complete Replacement</div>
             <div class="price-item">
-                <span class="service-name">Main sewer snake</span>
-                <span class="price">$600</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Sink clog</span>
-                <span class="price">$275</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Tub/shower clog</span>
-                <span class="price">$275</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Toilet auger</span>
-                <span class="price">$275</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Under-sink leak repair</span>
-                <span class="price">$325</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Tub overflow repair</span>
+                <span class="service-name">Installation only (customer supplies toilet)</span>
                 <span class="price">$385</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Builder-grade standard toilet (includes installation)</span>
+                <span class="price">$625</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Upgraded comfort-height elongated toilet</span>
+                <span class="price">$775</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Premium dual-flush or power-assist toilet</span>
+                <span class="price">$975</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Luxury one-piece or smart toilet</span>
+                <span class="price">$1,450+</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Garbage Disposals</div>
+            <div class="price-item">
+                <span class="service-name">Installation only (customer supplies disposal)</span>
+                <span class="price">$295</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Basic - Builder-grade 1/2 HP with fittings</span>
+                <span class="price">$725</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Upgraded - 3/4 HP with 9-year warranty</span>
+                <span class="price">$895</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Premium - 1 HP InSinkErator Evolution series</span>
+                <span class="price">$1,195</span>
             </div>
         </div>
 
@@ -506,27 +479,204 @@
             <div class="section-title">Water Heater Services</div>
             <div class="price-item">
                 <span class="service-name">50-gallon State electric (8yr warranty, ball valve & fittings)</span>
-                <span class="price">$1,870</span>
+                <span class="price">$2,050</span>
             </div>
             <div class="price-item">
                 <span class="service-name">LP/Gas State commercial powervent with fittings</span>
-                <span class="price">$2,875</span>
+                <span class="price">$3,150</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Basic service & flush (Navien)</span>
-                <span class="price">$350</span>
+                <span class="service-name">Tankless water heater (Navien/Rinnai, includes installation & venting)</span>
+                <span class="price">$4,995-$6,200</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Basic service & flush (Navien tankless)</span>
+                <span class="price">$385</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Service/clean gas WH + minimum</span>
-                <span class="price">$350</span>
+                <span class="price">$385</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Water heater flush & check</span>
-                <span class="price">$285</span>
+                <span class="service-name">Water heater flush & check (tank-style)</span>
+                <span class="price">$315</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Drain water heater for moving</span>
+                <span class="price">$270</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Smart Home & Modern Systems</div>
+            <div class="price-item">
+                <span class="service-name">Smart leak detection system installation</span>
+                <span class="price">$1,850</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Smart water shutoff valve installation</span>
+                <span class="price">$1,295</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Wi-Fi enabled sump pump with battery backup</span>
+                <span class="price">$1,895</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Whole-home water softener system</span>
+                <span class="price">$2,995-$3,800</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Whole-home sediment filtration system</span>
+                <span class="price">$995</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Preventive Maintenance Plans</div>
+            <div class="section-subtitle">Protect your investment with regular maintenance</div>
+            <div class="price-item">
+                <span class="service-name">Annual Single-Family Home Plan - 1 comprehensive inspection & maintenance visit per year</span>
+                <span class="price">$495/year</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Premium Plan - 2 visits per year + priority scheduling + 10% service discount</span>
+                <span class="price">$895/year</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Multi-Unit Property Plan (per unit) - Annual inspection & maintenance</span>
+                <span class="price">$395/unit/year</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Pre-Sale & Inspection Repairs</div>
+            <div class="price-item">
+                <span class="service-name">Replace/repair leaking shut-off valves</span>
+                <span class="price">$280</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">P-trap replacement under sinks</span>
+                <span class="price">$300</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Wax ring replacement (toilet reseating)</span>
+                <span class="price">$425</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Angle stop replacement</span>
+                <span class="price">$280</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Supply line replacement (each)</span>
+                <span class="price">$95</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Toilet flapper/fill valve replacement</span>
                 <span class="price">$245</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Toilet handle/trip lever replacement</span>
+                <span class="price">$165</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Minor toilet leak repair</span>
+                <span class="price">$245</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Fixture & Hardware Services</div>
+            <div class="price-item">
+                <span class="service-name">Bathroom vanity sink replacement (labor only)</span>
+                <span class="price">$495</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Pedestal sink installation</span>
+                <span class="price">$575</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Hose bibb (includes demo & valve)</span>
+                <span class="price">$635</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace shutoff stop</span>
+                <span class="price">$280</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Faucet dripping/leaking repair</span>
+                <span class="price">$280</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Drain & trap replacement for optimal storage</span>
+                <span class="price">$415</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace tub spout</span>
+                <span class="price">$270</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Replace shower arm & flange</span>
+                <span class="price">$250</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Drain & Clog Services</div>
+            <div class="price-item">
+                <span class="service-name">Main sewer snake</span>
+                <span class="price">$660</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Sink clog</span>
+                <span class="price">$300</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Tub/shower clog</span>
+                <span class="price">$300</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Toilet auger</span>
+                <span class="price">$300</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Under-sink leak repair</span>
+                <span class="price">$360</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Tub overflow repair</span>
+                <span class="price">$425</span>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="section-title">Specialty Installations & Upgrades</div>
+            <div class="price-item">
+                <span class="service-name">Pressure Reducing Valve (PRV)</span>
+                <span class="price">$625</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Backflow preventer installation</span>
+                <span class="price">$895</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Expansion tank installation</span>
+                <span class="price">$495</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Water hammer arrestor</span>
+                <span class="price">$325</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Install/replace refrigerator water line</span>
+                <span class="price">$360</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Install shut-off valve where missing</span>
+                <span class="price">$425</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Install clean-out access</span>
+                <span class="price">$535</span>
             </div>
         </div>
 
@@ -534,19 +684,19 @@
             <div class="section-title">Pumps & Well Systems</div>
             <div class="price-item">
                 <span class="service-name">1/2 HP well pump replacement</span>
-                <span class="price">$2,275</span>
+                <span class="price">$2,500</span>
             </div>
             <div class="price-item">
                 <span class="service-name">3/4 HP well pump replacement</span>
-                <span class="price">$2,775</span>
+                <span class="price">$3,050</span>
             </div>
             <div class="price-item">
                 <span class="service-name">1/2 HP sewage pump replacement</span>
-                <span class="price">$1,900</span>
+                <span class="price">$2,090</span>
             </div>
             <div class="price-item">
-                <span class="service-name">PRV (Pressure Reducing Valve)</span>
-                <span class="price">$575</span>
+                <span class="service-name">Standard sump pump installation</span>
+                <span class="price">$895</span>
             </div>
         </div>
 
@@ -554,39 +704,43 @@
             <div class="section-title">Water Filtration Systems</div>
             <div class="price-item">
                 <span class="service-name">Under-sink water filter installation</span>
-                <span class="price">$425</span>
+                <span class="price">$470</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Inline water filter for fridge</span>
-                <span class="price">$325</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Whole house sediment filter</span>
-                <span class="price">$875</span>
+                <span class="price">$360</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Filter cartridge replacement service</span>
-                <span class="price">$185</span>
+                <span class="price">$205</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Water quality test & report</span>
-                <span class="price">$195</span>
+                <span class="price">$215</span>
             </div>
         </div>
 
         <div class="pricing-section">
             <div class="section-title">Emergency Services</div>
             <div class="price-item">
+                <span class="service-name">Burst pipe emergency repair</span>
+                <span class="price">$850 minimum</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Sewer backup emergency</span>
+                <span class="price">$950 minimum</span>
+            </div>
+            <div class="price-item">
                 <span class="service-name">Frozen pipe thawing</span>
-                <span class="price">$425</span>
+                <span class="price">$470</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Replace burst washing machine hose</span>
-                <span class="price">$285</span>
+                <span class="price">$315</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Emergency shut-off valve location & tag</span>
-                <span class="price">$145</span>
+                <span class="price">$160</span>
             </div>
         </div>
 
@@ -594,35 +748,23 @@
             <div class="section-title">Preventive Property Maintenance</div>
             <div class="price-item">
                 <span class="service-name">Seasonal faucet winterization (per bibb)</span>
-                <span class="price">$95</span>
+                <span class="price">$105</span>
             </div>
             <div class="price-item">
-                <span class="service-name">Clean faucet aerators & shower heads</span>
-                <span class="price">$185</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Inspect & adjust all toilets (per unit)</span>
+                <span class="service-name">Spring startup & inspection</span>
                 <span class="price">$245</span>
             </div>
             <div class="price-item">
+                <span class="service-name">Clean faucet aerators & shower heads</span>
+                <span class="price">$205</span>
+            </div>
+            <div class="price-item">
+                <span class="service-name">Inspect & adjust all toilets (per unit)</span>
+                <span class="price">$270</span>
+            </div>
+            <div class="price-item">
                 <span class="service-name">Document plumbing condition for property</span>
-                <span class="price">$295</span>
-            </div>
-        </div>
-
-        <div class="pricing-section">
-            <div class="section-title">Small Fixture Updates</div>
-            <div class="price-item">
-                <span class="service-name">Install/replace refrigerator water line</span>
                 <span class="price">$325</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Install shut-off valve where missing</span>
-                <span class="price">$385</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Install clean-out access</span>
-                <span class="price">$485</span>
             </div>
         </div>
 
@@ -630,27 +772,15 @@
             <div class="section-title">Move-In/Move-Out Services</div>
             <div class="price-item">
                 <span class="service-name">Turn on/off water service & check</span>
-                <span class="price">$145</span>
+                <span class="price">$160</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Disconnect/reconnect washer</span>
-                <span class="price">$185</span>
+                <span class="price">$205</span>
             </div>
             <div class="price-item">
                 <span class="service-name">Cap off unused plumbing lines</span>
-                <span class="price">$285</span>
-            </div>
-        </div>
-
-        <div class="pricing-section">
-            <div class="section-title">Additional Services</div>
-            <div class="price-item">
-                <span class="service-name">Garbage disposal - builder grade with fittings</span>
-                <span class="price">$625</span>
-            </div>
-            <div class="price-item">
-                <span class="service-name">Garbage disposal - 9yr warranty ISE upgrade</span>
-                <span class="price">$725</span>
+                <span class="price">$315</span>
             </div>
         </div>
 
@@ -660,8 +790,9 @@
             <div class="email">hamilton@hamiltonplumbingva.com</div>
             
             <div class="note">
-                Transparent pricing for property management professionals. All prices include labor and standard materials. 
+                Transparent pricing for property management professionals. All prices include labor and standard materials unless otherwise noted. 
                 Licensed, insured, and specializing in rapid response for rental properties and real estate transactions.
+                Custom configurations and specialty installations available - contact us for detailed quotes.
             </div>
         </div>
     </div>
