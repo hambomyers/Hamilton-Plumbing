@@ -298,9 +298,72 @@
             max-width: 700px;
             margin: 0 auto;
         }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        .top-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 1px;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #6fa77f;
+        }
+
+        .premium-badge {
+            display: inline-block;
+            background: #4a7c59;
+            color: #fff;
+            font-size: 0.75em;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 10px;
+            letter-spacing: 1px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="#packages" class="nav-link">Value Packages</a>
+            <a href="#fixtures" class="nav-link">Fixtures &amp; Faucets</a>
+            <a href="#water-heaters" class="nav-link">Water Heaters</a>
+            <a href="#well-systems" class="nav-link">Well Systems &amp; Pumps</a>
+            <a href="#smart-home" class="nav-link">Smart Home</a>
+            <a href="#maintenance" class="nav-link">Maintenance &amp; Emergency</a>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="header">
             <h1>HAMILTON PLUMBING</h1>
@@ -327,7 +390,7 @@
             Ask your technician for details or apply instantly</p>
         </div>
 
-        <div class="pricing-section">
+        <div class="pricing-section" id="packages">
             <div class="section-title">Value Package Deals</div>
             <div class="section-subtitle">Save with our bundled service packages</div>
             <div class="price-item">
@@ -348,7 +411,7 @@
             </div>
         </div>
 
-        <div class="pricing-section">
+        <div class="pricing-section" id="fixtures">
             <div class="section-title">Kitchen Faucets</div>
             <div class="section-subtitle">Custom fixture configurations available - contact for quote</div>
             
@@ -475,7 +538,7 @@
             </div>
         </div>
 
-        <div class="pricing-section">
+        <div class="pricing-section" id="water-heaters">
             <div class="section-title">Water Heater Services</div>
             <div class="price-item">
                 <span class="service-name">50-gallon State electric (8yr warranty, ball valve & fittings)</span>
@@ -507,7 +570,7 @@
             </div>
         </div>
 
-        <div class="pricing-section">
+        <div class="pricing-section" id="smart-home">
             <div class="section-title">Smart Home & Modern Systems</div>
             <div class="price-item">
                 <span class="service-name">Smart leak detection system installation</span>
@@ -531,7 +594,7 @@
             </div>
         </div>
 
-        <div class="pricing-section">
+        <div class="pricing-section" id="maintenance">
             <div class="section-title">Preventive Maintenance Plans</div>
             <div class="section-subtitle">Protect your investment with regular maintenance</div>
             <div class="price-item">
@@ -680,8 +743,8 @@
             </div>
         </div>
 
-        <div class="pricing-section">
-            <div class="section-title">Pumps & Well Systems</div>
+        <div class="pricing-section" id="well-systems">
+            <div class="section-title">Pumps & Well Systems <span class="premium-badge">Deep Set Specialist</span></div>
             <div class="price-item">
                 <span class="service-name">1/2 HP well pump replacement</span>
                 <span class="price">$2,500</span>
